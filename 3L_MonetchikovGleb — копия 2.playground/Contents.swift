@@ -155,4 +155,3 @@ var gruz2 = Gruovik(model: .MazdaBongo, year: 2010, color: .green, engineStat: .
 
 gruz1.putToLuggage(howManyKG: 1600)
 print("Лежит кузове \(gruz1.freeValue) КГ")
-// просто дичь
