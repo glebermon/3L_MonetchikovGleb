@@ -94,7 +94,7 @@ enum gruzModel {
     case MazdaTitan, MazdaBongo, ToyotaDyna, ToyotaHiace
 }
 
-struct Gruovik {
+struct Gruzovik {
     let model: gruzModel
     let year: Int
     let color: UIColor
