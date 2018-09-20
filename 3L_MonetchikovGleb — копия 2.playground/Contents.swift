@@ -149,8 +149,8 @@ struct Gruzovik {
     }
 }
 
-var gruz1 = Gruovik(model: .ToyotaDyna, year: 1990, color: .blue, engineStat: .off, windowState: .close, trunkVolume: 1500, luggage: 650, owner: "Gleb Monetchikov")
-var gruz2 = Gruovik(model: .MazdaBongo, year: 2010, color: .green, engineStat: .on, windowState: .close, trunkVolume: 2000, luggage: 940, owner: "Max Boyarkin")
+var gruz1 = Gruzovik(model: .ToyotaDyna, year: 1990, color: .blue, engineStat: .off, windowState: .close, trunkVolume: 1500, luggage: 650, owner: "Gleb Monetchikov")
+var gruz2 = Gruzovik(model: .MazdaBongo, year: 2010, color: .green, engineStat: .on, windowState: .close, trunkVolume: 2000, luggage: 940, owner: "Max Boyarkin")
 
 
 gruz1.putToLuggage(howManyKG: 1600)
