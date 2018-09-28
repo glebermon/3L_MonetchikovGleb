@@ -15,7 +15,7 @@ enum CarHatchState {
 enum EngineOnOff {
     case on, off
 }
-enum carSuspension {
+enum CarSuspension {
     case ressory, pnevmo
 }
 
@@ -88,7 +88,7 @@ class Car {
 
 class TruckCar: Car {
     // Добавил тип подвески. Рессоры или пневматическая.
-    var suspensionState: carSuspension
+    var suspensionState: CarSuspension
     // Наличие пониженной передачи
     let reducedGear: Bool
     // Самосвал или нет
@@ -96,7 +96,7 @@ class TruckCar: Car {
     // Наличие крана
     let crane: Bool
     
-    init (model: String, year: Int, color: UIColor, mp3: Bool, transmission: Transmission, reducedGear: Bool, suspensionState: carSuspension,
+    init (model: String, year: Int, color: UIColor, mp3: Bool, transmission: Transmission, reducedGear: Bool, suspensionState: CarSuspension,
           tipper: Bool, crane: Bool, engineStat: EngineOnOff, km: Double, doorState: CarDoorState, windowsState: WindowsState, trunkVolume: Double, luggage: Double, owner: String) {
         self.suspensionState = suspensionState
         self.reducedGear = reducedGear
@@ -106,7 +106,7 @@ class TruckCar: Car {
     }
     
     
-    // переписал функцию. теперь можно класть в кузов больше, чем позволяет заявленная грузоподъемность, но лишь с небольшим перевесом.
+    // Переписал функцию. теперь можно класть в кузов больше, чем позволяет заявленная грузоподъемность, но лишь с небольшим перевесом.
     override func putToLuggage(howManyKG: Double) {
         if howManyKG <= trunkVolume {
             luggage = howManyKG
@@ -117,7 +117,7 @@ class TruckCar: Car {
             print("Не стоит ехать, коробку спалим - перевес сильно большой" + "\n")
         }
     }
-    // функция, чтобы полностью разгрузить кузов
+    // Функция, чтобы полностью разгрузить кузов.
     func unloading() {
         luggage = 0
     }
@@ -132,11 +132,11 @@ print("=================================================================\n")
 // ПОИГРАЕМСЯ С ГРУЗОВИКАМИ
 
 print("========== Кладу в кузов больше чем можно на 500 кг =============\n")
-truck1.putToLuggage(howManyKG: 4000) // кладу в кузов 1ой машины груз на 500 кг больше, чем она може взять
+truck1.putToLuggage(howManyKG: 4000) // Кладу в кузов 1ой машины груз на 500 кг больше, чем она може взять.
 print("========== Кладу в кузов с небольшим перевесом ==================\n")
-truck2.putToLuggage(howManyKG: 4600) // кладу в кузов 2ой всего на 100 кг перевес.
+truck2.putToLuggage(howManyKG: 4600) // Кладу в кузов 2ой всего на 100 кг перевес.
 
-truck3.luggage // сейчас посмотрим, чколько в кузове 3й машины и полностью ее разгрузим
+truck3.luggage // Сейчас посмотрим, чколько в кузове 3й машины и полностью ее разгрузим.
 truck3.freeSpace
 print("================= Полностью разгружаю кузов =====================\n")
 truck3.unloading()
@@ -159,3 +159,8 @@ car2.putToLuggage(howManyKG: 300)
 print("=================== Поменяю владельца машины ====================\n")
 car3.owner = "Gleb"
 print("=================================================================\n")
+
+
+
+
+truck1.putToLuggage(howManyKG: 5000)
